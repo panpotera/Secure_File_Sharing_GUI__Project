@@ -1,0 +1,4 @@
+bin/*
+!bin/.gitkeep
+File_Sharing_GUI/.vs*
+!File_Sharing_GUI/.vs/.gitkeep
