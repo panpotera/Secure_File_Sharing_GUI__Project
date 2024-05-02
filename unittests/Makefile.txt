@@ -1,0 +1,1 @@
+g++ -o encryption_test.exe encryption_test.cpp
