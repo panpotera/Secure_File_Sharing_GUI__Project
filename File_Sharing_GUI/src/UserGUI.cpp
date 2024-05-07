@@ -1,4 +1,9 @@
 #include "UserGUI.h"
+#pragma managed(push, off)
+#include "CryptingLibraries.h"
+#pragma managed(pop)
+
+
 
 FileSharingGUI::UserGUI::UserGUI(array<System::String^>^ args)
 {

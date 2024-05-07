@@ -27,10 +27,9 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\CryptingLibraries.cpp" />
     <ClCompile Include="src\Main.cpp" />
-    <ClCompile Include="src\support_library_functions.cpp" />
     <ClCompile Include="src\UserGUI.cpp" />
-    <ClCompile Include="unittests\keyGenTest.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -40,6 +39,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\CryptingLibraries.h" />
     <ClInclude Include="src\UserGUI.h" />
   </ItemGroup>
   <ItemGroup>
@@ -156,84 +156,86 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>"C:\Program Files\OpenSSL-Win64\include";%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)lib\OpenSSL-Win64\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <CompileAsManaged>true</CompileAsManaged>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
     </ClCompile>
     <Link>
       <AdditionalDependencies>libssl.lib;libcrypto.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <EntryPointSymbol>main</EntryPointSymbol>
+      <EntryPointSymbol>Main</EntryPointSymbol>
       <SubSystem>Windows</SubSystem>
-      <AdditionalLibraryDirectories>"C:\Program Files\OpenSSL-Win64\lib\VC\x64\MT";%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SolutionDir)lib\OpenSSL-Win64\lib\VC\x64\MDd;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>WIN32;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>"C:\Program Files\OpenSSL-Win64\include";%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)lib\OpenSSL-Win64\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <CompileAsManaged>true</CompileAsManaged>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
     </ClCompile>
     <Link>
       <AdditionalDependencies>libssl.lib;libcrypto.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <EntryPointSymbol>main</EntryPointSymbol>
+      <EntryPointSymbol>Main</EntryPointSymbol>
       <SubSystem>Windows</SubSystem>
-      <AdditionalLibraryDirectories>"C:\Program Files\OpenSSL-Win64\lib\VC\x64\MT";%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SolutionDir)lib\OpenSSL-Win64\lib\VC\x64\MDd;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>WIN32;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>"C:\Program Files\OpenSSL-Win64\include";%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)lib\OpenSSL-Win64\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <CompileAsManaged>true</CompileAsManaged>
     </ClCompile>
     <Link>
       <AdditionalDependencies>libssl.lib;libcrypto.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <EntryPointSymbol>main</EntryPointSymbol>
+      <EntryPointSymbol>Main</EntryPointSymbol>
       <SubSystem>Windows</SubSystem>
-      <AdditionalLibraryDirectories>"C:\Program Files\OpenSSL-Win64\lib\VC\x64\MT";%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>"$(SolutionDir)OpenSSL-Win64\lib\VC\x64\MDd";%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='keyGenUnitTestRun|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>WIN32;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>"C:\Program Files\OpenSSL-Win64\include";%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)lib\OpenSSL-Win64\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <CompileAsManaged>true</CompileAsManaged>
     </ClCompile>
     <Link>
       <AdditionalDependencies>libssl.lib;libcrypto.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <EntryPointSymbol>mainKeyGenTest</EntryPointSymbol>
+      <EntryPointSymbol>Main</EntryPointSymbol>
       <SubSystem>Console</SubSystem>
-      <AdditionalLibraryDirectories>"C:\Program Files\OpenSSL-Win64\lib\VC\x64\MT";%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>"$(SolutionDir)OpenSSL-Win64\lib\VC\x64\MDd";%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>"C:\Program Files\OpenSSL-Win64\include";%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)lib\OpenSSL-Win64\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <CompileAsManaged>true</CompileAsManaged>
     </ClCompile>
     <Link>
       <AdditionalDependencies>libssl.lib;libcrypto.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <EntryPointSymbol>main</EntryPointSymbol>
+      <EntryPointSymbol>Main</EntryPointSymbol>
       <SubSystem>Windows</SubSystem>
-      <AdditionalLibraryDirectories>"C:\Program Files\OpenSSL-Win64\lib\VC\x64\MT";%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>"$(SolutionDir)OpenSSL-Win64\lib\VC\x64\MDd";%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='keyGenUnitTestRun|x64'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>"C:\Program Files\OpenSSL-Win64\include";%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)lib\OpenSSL-Win64\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <CompileAsManaged>true</CompileAsManaged>
     </ClCompile>
     <Link>
       <AdditionalDependencies>libssl.lib;libcrypto.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <EntryPointSymbol>mainKeyGenTest</EntryPointSymbol>
+      <EntryPointSymbol>Main</EntryPointSymbol>
       <SubSystem>Console</SubSystem>
-      <AdditionalLibraryDirectories>"C:\Program Files\OpenSSL-Win64\lib\VC\x64\MT";%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>"$(SolutionDir)OpenSSL-Win64\lib\VC\x64\MDd";%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
