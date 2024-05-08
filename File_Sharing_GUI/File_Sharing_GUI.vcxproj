@@ -40,10 +40,14 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\CryptingLibraries.h" />
-    <ClInclude Include="src\UserGUI.h" />
+    <ClInclude Include="src\UserGUI.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="src\UserGUI.resx" />
+    <EmbeddedResource Include="src\UserGUI.resx">
+      <DependentUpon>src\UserGUI.h</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>

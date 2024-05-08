@@ -3,3 +3,5 @@ bin/*
 File_Sharing_GUI/.vs*
 !File_Sharing_GUI/.vs/.gitkeep
 unittests/*.exe
+File_Sharing_GUI/tmp/*
+!File_Sharing_GUI/tmp/.gitkeep

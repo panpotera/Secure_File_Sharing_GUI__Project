@@ -77,6 +77,7 @@ int connectToBob(char* bobIP, short port,  SOCKET* sockRET)//alice calls this fu
     if (connect(*sockRET, reinterpret_cast<SOCKADDR*>(&bobAddr), sizeof(bobAddr)) == SOCKET_ERROR) {
         std::cerr << "Failed to connect to server: " << std::endl;
         closesocket(*sockRET);
+        WSACleanup();
         return -1;
     }
 
@@ -178,7 +179,7 @@ int connectToAlice(char* AliceIP, short port, SOCKET* sockRET)//bob calls this f
         WSACleanup();
         return -1;
     }
-
+    closesocket(serverSocket);
     std::cout << "Client connected!" << std::endl;
     
 
