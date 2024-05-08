@@ -114,7 +114,16 @@ System::Void	FileSharingGUI::UserGUI::sendFileButton_Click(System::Object^ sende
 		//we good, make object of native Send class to send the message
 		AliceFileCrypt alcObj(static_cast<char*>(System::Runtime::InteropServices::Marshal::StringToHGlobalAnsi(BrowseSndFileTxtBox->Text).ToPointer()), nativeIPString, port);
 		int FileSent = alcObj.FileSent;
-		MessageBox::Show(this, FileSent.ToString(), nullptr, MessageBoxButtons::OK);
+		if (FileSent == 1)
+		{
+			sendFileStatus_label->Text = "Status:    Successfully Sent File";
+
+		}
+		else
+		{
+			MessageBox::Show(this, FileSent.ToString(), nullptr, MessageBoxButtons::OK);
+			sendFileStatus_label->Text = "Status:    Failed to sec File";
+		}
 	}
 	else
 	{
@@ -126,6 +135,7 @@ System::Void	FileSharingGUI::UserGUI::sendFileButton_Click(System::Object^ sende
 }
 
 System::Void FileSharingGUI::UserGUI::RcvFileButton_Click(System::Object^ sender, System::EventArgs^ e) {
+	RecvFileSatusLabel->Text = "Status:    Receiving File.";
 	//get a good port
 	int porti = Convert::ToInt32(recvFilePortTxtBox->Text);
 	if (porti < 1)
@@ -162,8 +172,15 @@ System::Void FileSharingGUI::UserGUI::RcvFileButton_Click(System::Object^ sender
 			nullptr,
 			port);
 		int FileRx = bobObj.FileReceived;
-		MessageBox::Show(this, FileRx.ToString(), nullptr, MessageBoxButtons::OK);
-
+		if (FileRx == 1)
+		{
+			RecvFileSatusLabel->Text = "Status:    Successfully Received File";
+		}
+		else
+		{
+			MessageBox::Show(this, FileRx.ToString(), nullptr, MessageBoxButtons::OK);
+			RecvFileSatusLabel->Text = "Status:    Failed to receiv File";
+		}
 	}
 	else
 	{//invalid file name

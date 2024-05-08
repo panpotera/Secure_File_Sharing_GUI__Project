@@ -364,7 +364,7 @@ namespace FileSharingGUI {
 			this->Controls->Add(this->sndOrRcvCombBox);
 			this->Controls->Add(this->tabControl1);
 			this->Name = L"UserGUI";
-			this->Text = L"File Sharing GUI";
+			this->Text = L"Encrypted_File Sharing GUI";
 			this->tabControl1->ResumeLayout(false);
 			this->Sending->ResumeLayout(false);
 			this->Sending->PerformLayout();
@@ -504,12 +504,13 @@ namespace FileSharingGUI {
 		sendPortTxtBox->Enabled = false;
 		sendFileButton->Enabled = false;
 		browseSendFileBox->Enabled = false;
+		sendFileStatus_label->Text = "Satus: NotSent";
 		//	pg2
 		recvFilePortTxtBox->Enabled = false;
 		RecvFileNameTxtBox->Enabled = false;
 		RcvFileButton->Enabled = false;
 		recvFile_DirectoryBrowse_button->Enabled = false;
-
+		RecvFileSatusLabel->Text = "Satus: NotRecv";
 	}
 
 	private: System::Void sendFileButton_Click(System::Object^ sender, System::EventArgs^ e);
